@@ -11,14 +11,14 @@ class PostTableViewCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         return label
     }()
     
     private let bodyLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 15)
         label.numberOfLines = 0
         return label
     }()
@@ -34,14 +34,14 @@ class PostTableViewCell: UITableViewCell {
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
-            bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             bodyLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             bodyLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
         ])
     }
     
@@ -50,7 +50,7 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func configure(with post: Post) {
-        titleLabel.text = post.title
+        titleLabel.text = String(format: "%d) %@", post.id, post.title)
         bodyLabel.text = post.body
     }
 }

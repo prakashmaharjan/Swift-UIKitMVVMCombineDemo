@@ -16,6 +16,10 @@
 		0476B8E12CCBA41100089DBD /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476B8E02CCBA41100089DBD /* PostDataModel.swift */; };
 		0476B8E32CCBA46200089DBD /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476B8E22CCBA46200089DBD /* PostTableViewCell.swift */; };
 		0476B8E52CCBA53800089DBD /* PostsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476B8E42CCBA53800089DBD /* PostsViewViewModel.swift */; };
+		1685A4482FE63E550029B792 /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685A4472FE63E430029B792 /* PostEndpoint.swift */; };
+		1685A44A2FE63F510029B792 /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685A4492FE63F4F0029B792 /* PostsRepository.swift */; };
+		1685A44F2FE644050029B792 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685A44E2FE643F90029B792 /* APIError.swift */; };
+		1685A4522FE6445A0029B792 /* NetworkServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685A4512FE644590029B792 /* NetworkServicing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		0476B8E02CCBA41100089DBD /* PostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataModel.swift; sourceTree = "<group>"; };
 		0476B8E22CCBA46200089DBD /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		0476B8E42CCBA53800089DBD /* PostsViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewViewModel.swift; sourceTree = "<group>"; };
+		1685A4472FE63E430029B792 /* PostEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
+		1685A4492FE63F4F0029B792 /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		1685A44E2FE643F90029B792 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		1685A4512FE644590029B792 /* NetworkServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +70,9 @@
 		0476B8C72CCB962F00089DBD /* UIKitMVVMCombineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0476B8EC2CCBB16400089DBD /* Helper */,
-				0476B8E82CCBAF1D00089DBD /* ViewModel */,
-				0476B8E72CCBAF1600089DBD /* Model */,
-				0476B8E62CCBAF1000089DBD /* View */,
-				0476B8C82CCB962F00089DBD /* AppDelegate.swift */,
-				0476B8CA2CCB962F00089DBD /* SceneDelegate.swift */,
+				1685A4542FE644F40029B792 /* features */,
+				1685A4532FE644990029B792 /* Core */,
+				1685A44D2FE643D60029B792 /* App */,
 				0476B8D12CCB963100089DBD /* Assets.xcassets */,
 				0476B8D32CCB963100089DBD /* LaunchScreen.storyboard */,
 				0476B8D62CCB963100089DBD /* Info.plist */,
@@ -111,9 +116,72 @@
 		0476B8EC2CCBB16400089DBD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				0476B8DE2CCBA3E900089DBD /* NetworkService.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		1685A44B2FE6431E0029B792 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1685A44E2FE643F90029B792 /* APIError.swift */,
+				0476B8DE2CCBA3E900089DBD /* NetworkService.swift */,
+				1685A4472FE63E430029B792 /* PostEndpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1685A44C2FE643B50029B792 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1685A4492FE63F4F0029B792 /* PostsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1685A44D2FE643D60029B792 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0476B8C82CCB962F00089DBD /* AppDelegate.swift */,
+				0476B8CA2CCB962F00089DBD /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1685A4502FE644210029B792 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1685A4512FE644590029B792 /* NetworkServicing.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		1685A4532FE644990029B792 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1685A44B2FE6431E0029B792 /* Network */,
+				1685A4502FE644210029B792 /* Protocol */,
+				0476B8EC2CCBB16400089DBD /* Helper */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1685A4542FE644F40029B792 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				1685A4552FE644FE0029B792 /* Posts */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		1685A4552FE644FE0029B792 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				0476B8E62CCBAF1000089DBD /* View */,
+				0476B8E82CCBAF1D00089DBD /* ViewModel */,
+				1685A44C2FE643B50029B792 /* Repository */,
+				0476B8E72CCBAF1600089DBD /* Model */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +212,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					0476B8C42CCB962F00089DBD = {
 						CreatedOnToolsVersion = 14.2;
@@ -189,8 +257,12 @@
 				0476B8E32CCBA46200089DBD /* PostTableViewCell.swift in Sources */,
 				0476B8DF2CCBA3E900089DBD /* NetworkService.swift in Sources */,
 				0476B8E12CCBA41100089DBD /* PostDataModel.swift in Sources */,
+				1685A4522FE6445A0029B792 /* NetworkServicing.swift in Sources */,
+				1685A44F2FE644050029B792 /* APIError.swift in Sources */,
 				0476B8CD2CCB962F00089DBD /* PostsViewController.swift in Sources */,
+				1685A4482FE63E550029B792 /* PostEndpoint.swift in Sources */,
 				0476B8E52CCBA53800089DBD /* PostsViewViewModel.swift in Sources */,
+				1685A44A2FE63F510029B792 /* PostsRepository.swift in Sources */,
 				0476B8C92CCB962F00089DBD /* AppDelegate.swift in Sources */,
 				0476B8CB2CCB962F00089DBD /* SceneDelegate.swift in Sources */,
 			);
@@ -244,8 +316,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = C2W3V35W5N;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -265,8 +339,10 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -304,8 +380,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = C2W3V35W5N;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -318,8 +396,10 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -331,7 +411,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C2W3V35W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitMVVMCombineDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -346,7 +425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pm.UIKitMVVMCombineDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -358,7 +437,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C2W3V35W5N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitMVVMCombineDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -373,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pm.UIKitMVVMCombineDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
