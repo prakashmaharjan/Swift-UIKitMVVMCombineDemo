@@ -10,6 +10,7 @@ Here Post list is fetched from sample json url (https://jsonplaceholder.typicode
 > **Note on Code Signing:** If compilation fails with a signing error, navigate to **Project Settings > Signing & Capabilities** and update the development team to your personal developer account.
 
 ## 🏗️ Architecture & Stack
+- **Language**: Swift 6
 - **Architecture**: MVVM(Model-View-ViewModel)
 - **UI Layout**: UIKit Programmatic 
 - **Network Client**: Combine-driven API service layer with URLSession
